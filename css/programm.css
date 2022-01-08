@@ -55,7 +55,7 @@ select {
   /* margin-bottom: 20px; */
 }
 
-a {
+.suivant {
   text-decoration: none;
   background: rgba(0, 16, 139, 0.7);
   box-shadow: 0 8px 32px 0 rgba(0, 7, 104, 0.37);
@@ -72,22 +72,8 @@ a {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  /* cursor: pointer; */
-}
-.suivant {
-  background-color: transparent;
-  color: white;
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
-  font-size: 20px;
-  border: none;
   cursor: pointer;
-}
-
-img {
-  margin-top: 5px;
-  margin-left: 10px;
+  margin: auto;
 }
 
 td {

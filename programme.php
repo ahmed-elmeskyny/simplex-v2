@@ -5,17 +5,8 @@ session_start();
 <!doctype html>
 <html>
  <head>
-     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/programm.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,800&display=swap"
-      rel="stylesheet"
-    />
      <title>Simplexe </title>
+        <link rel="stylesheet" href="./css/programm.css" />
 </title>
 </head>
 <body>
@@ -23,9 +14,9 @@ session_start();
          $_SESSION["varde"]=$_POST["varde"];
          $_SESSION["con"]=$_POST["con"];
     ?>
-     <div class="title">
-      <h1>LE PROGRAMME LINEAIRE</h1>
-    </div>
+     <h1>
+         LE PROGRAMME LINEAIRE
+     </h1>
          <form action="solution.php" method="post">
             <table>
                  <tr>
@@ -84,7 +75,7 @@ session_start();
                     </td>
                 </tr>
             </table>
-            <a href="solution.php"><input type="submit" value="suivant" class="suivant" ><img src="./assets/arrow.png" width="15px" /></a>
+          <button type="submit" value="suivant" class="suivant">Suivant</button>
          </form>
 </body>
 </html>

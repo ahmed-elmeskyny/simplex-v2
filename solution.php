@@ -3,17 +3,8 @@ session_start()?>
 <!doctype html>
 <html>
  <head>
-     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/solution.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,800&display=swap"
-      rel="stylesheet"
-    />
      <title>Simplexe </title>
+       <link rel="stylesheet" href="./css/solution.css" />
 </title>
 <style>
    table, th, td {
@@ -38,7 +29,7 @@ table{
     <tr>
        <td>
         
-            <table >
+            <table>
                  <tr>
                    
                      <td><?php
@@ -281,13 +272,13 @@ table{
 while (1) {
 
    //affichage de tableau 
- echo'<br><h1>le tableau '.$p.'</h1><br>';
+ echo'<br><h1>le tableau'.$p.'</h1><br>';
      $entrante=conditionArret($tableau["z"],$tableau["var"],$base);
   
   
    if ($tableau["z"][$entrante]<0) {
       for ($k=0; $k <$_SESSION["con"] ; $k++) { 
-        if ($tableau[$base[$k]][$entrante]<0) {
+        if ($tableau[$base[$k]][$entrante]<=0) {
            $j++;
         }
       }
@@ -305,7 +296,8 @@ while (1) {
         }
         echo"</table>";
          echo'<p>-le programme n\'admet pas de solutions
-         optimales  car <img src="sans.png"> </p><br>';
+         optimales  car <span style="color:red"><b>&exist; j </b></span>tel que <span style="color:red"><b>(z<sub>j</sub><sup>N</sup>-c<sub>j</sub><sup>N</sup>) &lt; 0</b></span> , avec <span style="color:red"><b>a<sub>i</sub><sub>j</sub> &le; 0, &forall; i </b></span> </p><br>';
+         //<img src="sans.png" height="30px" width="200px"> 
          break;
       }
       else{
@@ -358,7 +350,7 @@ while (1) {
         }
         echo"</table>";
              
-        echo'<span>
+        echo'<p>
         -Teste d’optimalité: la base B'.($i+1).' ne correspond pas à une solution optimal car zn-cn('.$tableau["var"][$entrante].')<0<br>
         
         -Premier critère de Dantzig : '.$tableau["var"][$entrante].' doit rentrer<br>
@@ -366,7 +358,7 @@ while (1) {
         -Deuxième critère de Dantzig : '.$base[$sortante].' doit sortir<br>
         
         -Opération pivotage : pivot a'.($sortante+1).''.$entrante.'='.$tableau[$base[$sortante]][$entrante].'
-        </span></br>';
+        </p></br>';
         // mise a jour du tableau 
        foreach ($tableau as $key => $value) {
           if ($key==$base[$sortante]) {
@@ -412,8 +404,9 @@ while (1) {
      }
      echo"</table>";
           
-      echo'<span>-Teste d’optimalité: la base B 2 correspond à une solution
-      optimal: car <img src="unique.png"> de plus la solution est unique : </span>';
+      echo'<p>-Teste d’optimalité: la base B  correspond à une solution
+      optimal: car <span style="color:red"><b>(z<sub>j</sub><sup>N</sup>-c<sub>j</sub><sup>N</sup>) &gt; 0 , &forall; j </b></span> de plus la solution est unique : </p>';
+      //<img src="unique.png">
       foreach ($base as  $value) {
         if($value[0]=="x")
         {
@@ -438,8 +431,9 @@ while (1) {
         }
         echo"</table>";
              
-      echo'<span>-le programme admet une infinité de solutions
-      optimales  car <img src="infini.png"> </span><br>'; 
+      echo'<p>-le programme admet une infinité de solutions
+      optimales  car <span style="color:red"><b> &exist; j</b></span> tel que <span style="color:red"><b> (z<sub>j</sub><sup>N</sup>-c<sub>j</sub><sup>N</sup>) = 0 </b></span> </p><br>'; 
+      //<img src="infini.png">
       break;
    }
    $j=0;
