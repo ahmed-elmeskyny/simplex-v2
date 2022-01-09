@@ -272,7 +272,7 @@ table{
 while (1) {
 
    //affichage de tableau 
- echo'<br><h1>le tableau'.$p.'</h1><br>';
+ echo'<br><h1>le tableau'.($p+1).'</h1><br>';
      $entrante=conditionArret($tableau["z"],$tableau["var"],$base);
   
   
@@ -351,7 +351,7 @@ while (1) {
         echo"</table>";
              
         echo'<p>
-        -Teste d’optimalité: la base B'.($i+1).' ne correspond pas à une solution optimal car zn-cn('.$tableau["var"][$entrante].')<0<br>
+        -Teste d’optimalité: la base B'.($p+1).' ne correspond pas à une solution optimal car zn-cn('.$tableau["var"][$entrante].')<0<br>
         
         -Premier critère de Dantzig : '.$tableau["var"][$entrante].' doit rentrer<br>
         
